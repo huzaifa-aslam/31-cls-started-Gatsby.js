@@ -1,0 +1,8 @@
+npm i -g gatsby-cli // to initialize gatsby cli
+
+sudo gatsby new project-name  // to initialize new project
+
+
+sudo gatsby new project-name existing-project-url  // to use existing project
+
+
