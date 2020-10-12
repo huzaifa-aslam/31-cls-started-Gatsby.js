@@ -1,12 +1,15 @@
+const dotenv=require('dotenv')
+dotenv.config()
+
 module.exports = {
     plugins: [
         `gatsby-plugin-material-ui`,   
         {
             resolve: `gatsby-source-contentful`,
             options: {
-              spaceId: `w94lmbjg9b7i`,
+              spaceId:CONTENTFUL_SPACE_ID,
               // Learn about environment variables: https://gatsby.dev/env-vars
-              accessToken: '4BHm0DFV4iAZYVu3tCCKqtHLPYSxs-eZ4gjZ4n1PHns',
+              accessToken:CONTENTFUL_ACCESS_TOKEN,
             },
           },
        

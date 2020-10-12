@@ -1,8 +1,8 @@
 // *************  Graphql  **********************
-
+var path=require('path')
 
 exports.createPages=async ({actions,graphql})=>{
-  const {createPages}=actions;
+  const {createPage}=actions;
   const result=await graphql(`{
     allContentfulElectronics {
       nodes {
@@ -15,6 +15,17 @@ exports.createPages=async ({actions,graphql})=>{
     }  
   }`)
   console.log(JSON.stringify(result))
+
+  result.data.allContentfulElectronics.nodes.forEach((obj)=>{
+    createPage({
+      path:`/myproduct/${obj.slug}`,
+      component:path.resolve('./src/templates/myproduct.jsx'),
+      context:{
+        itemDetails:obj
+      }
+    })
+
+  })
 }
 
 
